@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 enum DirectionInput
 {
@@ -12,6 +14,9 @@ enum DirectionInput
 
 public class ArrowPuzzle : MonoBehaviour
 {
+    public GameObject canvas;
+    public List<GameObject> arrowImages;
+
     [SerializeField] private List<DirectionInput> puzzle = new List<DirectionInput>();
     [SerializeField] private int length;
     [SerializeField] private int currentIndex;
@@ -39,6 +44,8 @@ public class ArrowPuzzle : MonoBehaviour
             isComplete = false;
             Debug.Log("Set Length");
         }
+
+        DrawPuzzle();
     }
 
     // Update is called once per frame
@@ -88,6 +95,16 @@ public class ArrowPuzzle : MonoBehaviour
         else if (isComplete)
         {
             Debug.Log("COMPLETE");
+        }
+    }
+
+    private void DrawPuzzle()
+    {
+        for (int i = 0; i < length; i++)
+        {
+            GameObject arrowImage = Instantiate(arrowImages[(int)puzzle[i]]);
+            arrowImage.transform.SetParent(canvas.transform, false);
+            arrowImage.transform.position = new Vector3(arrowImage.transform.position.x + (i * 100), arrowImage.transform.position.y, arrowImage.transform.position.z);
         }
     }
 
