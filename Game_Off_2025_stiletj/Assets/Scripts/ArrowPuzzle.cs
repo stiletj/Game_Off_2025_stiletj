@@ -16,20 +16,24 @@ public class ArrowPuzzle : MonoBehaviour
 {
     public GameObject canvas;
     public List<GameObject> arrowImages;
+    public bool isComplete;
 
     [SerializeField] private List<DirectionInput> puzzle = new List<DirectionInput>();
     [SerializeField] private int length;
     [SerializeField] private int currentIndex;
     private int correctKey;                         //0 = no input, >0 = true, <0 = false
-    private bool isComplete;
+    private bool isDrawn;
+    private List<GameObject> arrowObjects = new List<GameObject>();
 
-    public ArrowPuzzle(int _length)
+    public void CreateArrowPuzzle(int _length, GameObject _canvas)
     {
         length = _length;
+        canvas = _canvas;
         CreatePuzzle();
         currentIndex = 0;
         correctKey = -1;
         isComplete = false;
+        isDrawn = false;
     }
 
     // Start is called before the first frame update
@@ -42,8 +46,9 @@ public class ArrowPuzzle : MonoBehaviour
             currentIndex = 0;
             correctKey = -1;
             isComplete = false;
-            Debug.Log("Set Length");
         }
+        
+        isDrawn = false;
 
         DrawPuzzle();
     }
@@ -51,6 +56,11 @@ public class ArrowPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isDrawn)
+        {
+            DrawPuzzle();
+        }
+
         correctKey = 0;
 
         if (!isComplete)
@@ -102,10 +112,15 @@ public class ArrowPuzzle : MonoBehaviour
     {
         for (int i = 0; i < length; i++)
         {
-            GameObject arrowImage = Instantiate(arrowImages[(int)puzzle[i]]);
-            arrowImage.transform.SetParent(canvas.transform, false);
-            arrowImage.transform.position = new Vector3(arrowImage.transform.position.x + (i * 100), arrowImage.transform.position.y, arrowImage.transform.position.z);
+            arrowObjects.Add(Instantiate(arrowImages[(int)puzzle[i]]));
+            arrowObjects[i].transform.SetParent(canvas.transform, false);
+            arrowObjects[i].transform.position = new Vector3(
+                arrowObjects[i].transform.position.x + (i * 100), 
+                arrowObjects[i].transform.position.y, 
+                arrowObjects[i].transform.position.z);
         }
+
+        isDrawn = true;
     }
 
     private void CreatePuzzle()
@@ -130,5 +145,13 @@ public class ArrowPuzzle : MonoBehaviour
         }
 
         return res;
+    }
+
+    public void DeletePuzzle()
+    {
+        for (int i = 0; i < length; i++)
+        {
+            Destroy(arrowObjects[i]);
+        }
     }
 }

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\ScrollEnvironment.cs" />
     <Compile Include="Assets\Scripts\ArrowPuzzle.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\NPCInteraction.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

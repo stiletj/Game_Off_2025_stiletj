@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class ScrollEnvironment : MonoBehaviour
 {
+    public float scrollSpeed;
     public GameObject environPrefab;
     private Vector3 updatePos;
     private Vector3 offsetVec;
@@ -12,6 +13,7 @@ public class ScrollEnvironment : MonoBehaviour
     private GameObject back;
 
     private bool hasUpdated;
+    private bool isPaused;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class ScrollEnvironment : MonoBehaviour
         updatePos = transform.position;
         offsetVec = new Vector3(0, 0, 40);
         hasUpdated = false;
+        isPaused = false;
 
         front = Instantiate(environPrefab);
         front.transform.position = updatePos + new Vector3(0, 0, 1);
@@ -30,7 +33,11 @@ public class ScrollEnvironment : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateEnvironmentLoading();
+        if (!isPaused)
+        {
+            UpdateEnvironmentPosition(scrollSpeed);
+            UpdateEnvironmentLoading();
+        }
     }
 
     private void UpdateEnvironmentLoading()
@@ -73,5 +80,15 @@ public class ScrollEnvironment : MonoBehaviour
         {
             obj.transform.position += new Vector3(0, 0, scrollSpeed * Time.deltaTime);
         }
+    }
+
+    public void Pause()
+    {
+        isPaused = true;
+    }
+
+    public void Play()
+    {
+        isPaused = false;
     }
 }
