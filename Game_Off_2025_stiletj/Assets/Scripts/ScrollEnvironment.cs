@@ -5,42 +5,73 @@ using UnityEngine;
 
 public class ScrollEnvironment : MonoBehaviour
 {
-    public Vector3 startPos;
-    public float scrollSpeed;
     public GameObject environPrefab;
-    private List<Object> scrollableEnvironment = new List<Object>();
-    private GameObject backTrigger;
-    private GameObject frontTrigger;
-    private int currentEnvironment;
+    private Vector3 updatePos;
+    private Vector3 offsetVec;
+    private GameObject front;
+    private GameObject back;
+
+    private bool hasUpdated;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentEnvironment = 0;
-        scrollableEnvironment.Add(Instantiate(environPrefab));
-        //set front trigger
-        //set back trigger
+        updatePos = transform.position;
+        offsetVec = new Vector3(0, 0, 40);
+        hasUpdated = false;
+
+        front = Instantiate(environPrefab);
+        front.transform.position = updatePos + new Vector3(0, 0, 1);
+
+        back = Instantiate(environPrefab);
+        back.transform.position = front.transform.position - offsetVec;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        UpdateEnvironmentLoading();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void UpdateEnvironmentLoading()
     {
-        Vector3 spawnPos = new Vector3(0, 0, 0);
-
-        if (other.gameObject == backTrigger)
+        if (front.transform.position.z <= updatePos.z + 0.2 && front.transform.position.z >= updatePos.z - 0.2)
         {
-            //Set spawnPos to behind current environment
+            if (!hasUpdated)
+            {
+                Destroy(back);
+                back = null;
+                back = front;
+                front = null;
+                front = Instantiate(environPrefab);
+                front.transform.position = back.transform.position + offsetVec;
+                hasUpdated = true;
+            }
         }
-        else if (other.gameObject == frontTrigger)
+        else if (back.transform.position.z <= updatePos.z + 0.2 && back.transform.position.z >= updatePos.z - 0.2)
         {
-            //Set spawnPos to in front of current environment
+            if (!hasUpdated)
+            {
+                Destroy(front);
+                front = null;
+                front = back;
+                back = null;
+                back = Instantiate(environPrefab);
+                back.transform.position = front.transform.position - offsetVec;
+                hasUpdated = true;
+            }
         }
+        else
+        {
+            hasUpdated = false;
+        }
+    }
 
-        //Instantiate environPrefab and add to scrollableEnvironment list
+    public void UpdateEnvironmentPosition(float scrollSpeed)
+    {
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Scrollable"))
+        {
+            obj.transform.position += new Vector3(0, 0, scrollSpeed * Time.deltaTime);
+        }
     }
 }

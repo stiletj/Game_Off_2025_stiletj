@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float moveSpeed;
+    public ScrollEnvironment environmentManager;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.W))
         {
-            transform.Translate(new Vector3(0, 0, moveSpeed * Time.deltaTime));
+            environmentManager.UpdateEnvironmentPosition(-moveSpeed);
         }
 
         if (Input.GetKey(KeyCode.A))
@@ -27,7 +28,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
         {
-            transform.Translate(new Vector3(0, 0, -moveSpeed * Time.deltaTime));
+            environmentManager.UpdateEnvironmentPosition(moveSpeed);
         }
 
         if (Input.GetKey(KeyCode.D))
