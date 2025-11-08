@@ -11,6 +11,7 @@ public class ScrollEnvironment : MonoBehaviour
     private Vector3 offsetVec;
     private GameObject front;
     private GameObject back;
+    private float previousScrollSpeed;
 
     private bool hasUpdated;
     private bool isPaused;
@@ -28,6 +29,8 @@ public class ScrollEnvironment : MonoBehaviour
 
         back = Instantiate(environPrefab);
         back.transform.position = front.transform.position - offsetVec;
+
+        previousScrollSpeed = scrollSpeed;
     }
 
     // Update is called once per frame
@@ -90,5 +93,16 @@ public class ScrollEnvironment : MonoBehaviour
     public void Play()
     {
         isPaused = false;
+    }
+
+    public void SetScrollSpeed(float speed)
+    {
+        previousScrollSpeed = scrollSpeed;
+        scrollSpeed = speed;
+    }
+
+    public void RevertScrollSpeed()
+    {
+        scrollSpeed = previousScrollSpeed;
     }
 }

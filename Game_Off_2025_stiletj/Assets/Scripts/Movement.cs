@@ -20,9 +20,27 @@ public class Movement : MonoBehaviour
     {
         if (!isFrozen)
         {
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                environmentManager.SetScrollSpeed(environmentManager.scrollSpeed - 2);
+            }
+            if (Input.GetKeyUp(KeyCode.W))
+            {
+                environmentManager.RevertScrollSpeed();
+            }
+
             if (Input.GetKey(KeyCode.A))
             {
                 transform.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0, 0));
+            }
+
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                environmentManager.SetScrollSpeed(environmentManager.scrollSpeed + 2);
+            }
+            if (Input.GetKeyUp(KeyCode.S))
+            {
+                environmentManager.RevertScrollSpeed();
             }
 
             if (Input.GetKey(KeyCode.D))
