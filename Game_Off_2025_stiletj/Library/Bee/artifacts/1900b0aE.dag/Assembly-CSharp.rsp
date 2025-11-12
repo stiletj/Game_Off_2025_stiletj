@@ -417,6 +417,7 @@
 "Assets/Scripts/NPCInteraction.cs"
 "Assets/Scripts/NPCSpawner.cs"
 "Assets/Scripts/ScrollEnvironment.cs"
+"Assets/Scripts/Timer.cs"
 -langversion:9.0
 /deterministic
 /optimize+
