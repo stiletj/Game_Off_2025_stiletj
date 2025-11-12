@@ -22,11 +22,11 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                environmentManager.SetScrollSpeed(environmentManager.scrollSpeed - 2);
+                environmentManager.SpeedUp(-2);
             }
             if (Input.GetKeyUp(KeyCode.W))
             {
-                environmentManager.RevertScrollSpeed();
+                environmentManager.ResetSpeed();
             }
 
             if (Input.GetKey(KeyCode.A))
@@ -36,11 +36,11 @@ public class Movement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.S))
             {
-                environmentManager.SetScrollSpeed(environmentManager.scrollSpeed + 2);
+                environmentManager.SlowDown(-2);
             }
             if (Input.GetKeyUp(KeyCode.S))
             {
-                environmentManager.RevertScrollSpeed();
+                environmentManager.ResetSpeed();
             }
 
             if (Input.GetKey(KeyCode.D))
@@ -56,9 +56,13 @@ public class Movement : MonoBehaviour
         environmentManager.Pause();
     }
 
-    public void UnFreezeMovement()
+    public void UnFreezeMovement(bool increment)
     {
         isFrozen = false;
+        if (increment)
+        {
+            environmentManager.IncrementDefaultSpeed(-1);
+        }
         environmentManager.Play();
     }
 }

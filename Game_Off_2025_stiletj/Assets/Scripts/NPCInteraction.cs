@@ -30,7 +30,7 @@ public class NPCInteraction : MonoBehaviour
                 Destroy(puzzle);
                 puzzle = null;
 
-                player.GetComponent<Movement>().UnFreezeMovement();
+                player.GetComponent<Movement>().UnFreezeMovement(true);
                 player = null;
 
                 used = true;
