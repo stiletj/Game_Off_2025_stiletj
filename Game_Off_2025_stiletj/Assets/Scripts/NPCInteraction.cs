@@ -33,6 +33,8 @@ public class NPCInteraction : MonoBehaviour
                 player.GetComponent<Movement>().UnFreezeMovement(true);
                 player = null;
 
+                ScoreTracker.IncrementInteractionScore();
+
                 used = true;
             }
         }
