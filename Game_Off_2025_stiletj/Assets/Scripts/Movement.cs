@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public float moveSpeed;
+    public float horizontalMoveSpeed;
+    public float verticalMoveSpeed;
     public ScrollEnvironment environmentManager;
 
     private bool isFrozen;
@@ -20,32 +21,24 @@ public class Movement : MonoBehaviour
     {
         if (!isFrozen)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKey(KeyCode.W))
             {
-                environmentManager.SpeedUp(-2);
-            }
-            if (Input.GetKeyUp(KeyCode.W))
-            {
-                environmentManager.ResetSpeed();
+                transform.Translate(new Vector3(0, 0, verticalMoveSpeed * Time.deltaTime));
             }
 
             if (Input.GetKey(KeyCode.A))
             {
-                transform.Translate(new Vector3(-moveSpeed * Time.deltaTime, 0, 0));
+                transform.Translate(new Vector3(-horizontalMoveSpeed * Time.deltaTime, 0, 0));
             }
 
-            if (Input.GetKeyDown(KeyCode.S))
+            if (Input.GetKey(KeyCode.S))
             {
-                environmentManager.SlowDown(-2);
-            }
-            if (Input.GetKeyUp(KeyCode.S))
-            {
-                environmentManager.ResetSpeed();
+                transform.Translate(new Vector3(0, 0, -verticalMoveSpeed * Time.deltaTime));
             }
 
             if (Input.GetKey(KeyCode.D))
             {
-                transform.Translate(new Vector3(moveSpeed * Time.deltaTime, 0, 0));
+                transform.Translate(new Vector3(horizontalMoveSpeed * Time.deltaTime, 0, 0));
             }
         }
     }

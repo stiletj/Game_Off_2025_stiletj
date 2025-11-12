@@ -227,7 +227,9 @@ GameObject:
   - component: {fileID: 328745109}
   - component: {fileID: 328745108}
   - component: {fileID: 328745110}
-  m_Layer: 0
+  - component: {fileID: 328745112}
+  - component: {fileID: 328745111}
+  m_Layer: 3
   m_Name: Environment Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,6 +283,48 @@ MonoBehaviour:
   maxSpawnRange: {x: 8.14, y: 1, z: 32.15}
   minDespawnRange: {x: -8.14, y: 1, z: -11}
   maxDespawnRange: {x: 8.14, y: 1, z: -10}
+--- !u!65 &328745111
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328745107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 21.404057, y: 4.3261347, z: 5.2381477}
+  m_Center: {x: -0.88502693, y: 1.6630676, z: 10.040514}
+--- !u!65 &328745112
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328745107}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.626568, y: 4.2531586, z: 5.4011383}
+  m_Center: {x: -0.19247437, y: 1.6265793, z: -19.461193}
 --- !u!1 &1380218903
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +500,7 @@ GameObject:
   - component: {fileID: 1731686555}
   - component: {fileID: 1731686554}
   - component: {fileID: 1731686559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -475,7 +519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 958567116b71bba4799f275a911006fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  horizontalMoveSpeed: 5
+  verticalMoveSpeed: 2
   environmentManager: {fileID: 328745108}
 --- !u!136 &1731686555
 CapsuleCollider:

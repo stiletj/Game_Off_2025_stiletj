@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3529621288778353380}
   - component: {fileID: 4946903613180568985}
   - component: {fileID: 3778819332293488937}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NPC lvl1
   m_TagString: Scrollable
   m_Icon: {fileID: 0}

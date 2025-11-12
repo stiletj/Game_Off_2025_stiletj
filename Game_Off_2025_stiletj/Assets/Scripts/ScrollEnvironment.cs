@@ -96,21 +96,6 @@ public class ScrollEnvironment : MonoBehaviour
         isPaused = false;
     }
 
-    public void SpeedUp(float amount)
-    {
-        scrollSpeed = defaultSpeed + amount;
-    }
-
-    public void SlowDown(float amount)
-    {
-        scrollSpeed = defaultSpeed - amount;
-    }
-
-    public void ResetSpeed()
-    {
-        scrollSpeed = defaultSpeed;
-    }
-
     public void IncrementDefaultSpeed(float amount)
     {
         defaultSpeed += amount;
