@@ -415,6 +415,7 @@
 "Assets/Scripts/ArrowPuzzle.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/NPCInteraction.cs"
+"Assets/Scripts/NPCSpawner.cs"
 "Assets/Scripts/ScrollEnvironment.cs"
 -langversion:9.0
 /deterministic

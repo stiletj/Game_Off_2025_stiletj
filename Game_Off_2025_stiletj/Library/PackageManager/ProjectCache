@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638981845706194758
-    m_Hash: 3933526449
+      ticks: 638985297217627436
+    m_Hash: 1152195810
   m_LockFileStatus:
     m_FilePath: D:/GitHub/Game_Off_2025_stiletj/Game_Off_2025_stiletj/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638981845707591794
-    m_Hash: 3082374058
+      ticks: 638985297217627436
+    m_Hash: 3130830382
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -419,9 +419,11 @@ m_ResolvedPackages:
     - 1.14.1
     - 1.14.2
     - 1.15.0
+    - 1.16.0
     compatible:
     - 1.14.2
     - 1.15.0
+    - 1.16.0
     recommended: 1.14.2
     deprecated: []
   dependencies:

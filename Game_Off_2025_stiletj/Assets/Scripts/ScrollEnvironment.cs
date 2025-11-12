@@ -87,6 +87,7 @@ public class ScrollEnvironment : MonoBehaviour
 
     public void Pause()
     {
+        RevertScrollSpeed();
         isPaused = true;
     }
 
