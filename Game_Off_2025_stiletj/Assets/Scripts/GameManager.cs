@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
+        if (scrollEnvironment.distance == 75)
         {
             EndGame();
             scrollEnvironment.Pause();
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
             stopwatchObj.GetComponent<StopWatch>().StopTimer();
             ScoreTracker.CalcTimeScore(stopwatchObj.GetComponent<StopWatch>().currentMin * 60f + stopwatchObj.GetComponent<StopWatch>().currentSec + stopwatchObj.GetComponent<StopWatch>().currentMs / 100f);
             gameScore = ScoreTracker.GetFinalScore();
-            Destroy(stopwatchObj);
+            //Destroy(stopwatchObj);
         }
     }
 }

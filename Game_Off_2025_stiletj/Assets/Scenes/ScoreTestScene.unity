@@ -242,7 +242,7 @@ Transform:
   m_GameObject: {fileID: 582267224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 276.95004, y: -0.00003, z: 4342.3096}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -695,6 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: -5
   environPrefab: {fileID: 3810640091604794277, guid: 08a413b410ec5d44a9fe5489c2c53c59, type: 3}
+  distance: 0
 --- !u!4 &1828544320
 Transform:
   m_ObjectHideFlags: 0

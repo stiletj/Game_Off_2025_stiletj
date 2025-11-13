@@ -7,6 +7,8 @@ public class ScrollEnvironment : MonoBehaviour
 {
     public float scrollSpeed;
     public GameObject environPrefab;
+    public int distance;
+
     private Vector3 updatePos;
     private Vector3 offsetVec;
     private GameObject front;
@@ -31,6 +33,8 @@ public class ScrollEnvironment : MonoBehaviour
         back.transform.position = front.transform.position - offsetVec;
 
         defaultSpeed = scrollSpeed;
+
+        distance = 0;
     }
 
     // Update is called once per frame
@@ -56,6 +60,8 @@ public class ScrollEnvironment : MonoBehaviour
                 front = Instantiate(environPrefab);
                 front.transform.position = back.transform.position + offsetVec;
                 hasUpdated = true;
+
+                distance++;
             }
         }
         else if (back.transform.position.z <= updatePos.z + 0.2 && back.transform.position.z >= updatePos.z - 0.2)
@@ -69,6 +75,8 @@ public class ScrollEnvironment : MonoBehaviour
                 back = Instantiate(environPrefab);
                 back.transform.position = front.transform.position - offsetVec;
                 hasUpdated = true;
+
+                distance--;
             }
         }
         else
