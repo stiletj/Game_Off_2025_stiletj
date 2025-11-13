@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
         stopwatchObj.transform.SetParent(canvas.transform, false);
         stopwatchPrefab.GetComponent<StopWatch>().StartTimer();
         ScoreTracker.ResetScore();
+
+        //stopwatchPrefab.GetComponent<StopWatch>().SetOnSecondFunc(scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC);
     }
 
     // Update is called once per frame

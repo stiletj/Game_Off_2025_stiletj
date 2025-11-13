@@ -16,7 +16,7 @@ public class NPCSpawner : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SpawnNPC(GenerateRandomLocation());
+        //Spawn(GenerateRandomLocation());
     }
 
     // Update is called once per frame
@@ -30,8 +30,7 @@ public class NPCSpawner : MonoBehaviour
                 {
                     if (npcList[i].transform.position.z <= maxDespawnRange.z && npcList[i].transform.position.z >= minDespawnRange.z)
                     {
-                        DespawnNPC(i);
-                        SpawnNPC(GenerateRandomLocation());
+                        Despawn(i);
                     }
                 }
             }
@@ -48,16 +47,21 @@ public class NPCSpawner : MonoBehaviour
         return pos;
     }
 
-    private void SpawnNPC(Vector3 location)
+    private void Spawn(Vector3 location)
     {
         npcList.Add(Instantiate(npcPrefab));
         npcList[npcList.Count - 1].transform.position = location;
         npcList[npcList.Count - 1].GetComponent<NPCInteraction>().canvas = canvas;
     }
 
-    private void DespawnNPC(int i)
+    private void Despawn(int i)
     {
         Destroy(npcList[i]);
         npcList.RemoveAt(i);
+    }
+
+    public void SpawnNPC()
+    {
+        Spawn(GenerateRandomLocation());
     }
 }

@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 
+public delegate void OnTickFunc();
+
 public class StopWatch : MonoBehaviour
 {
     public TextMeshProUGUI timer;
@@ -11,6 +13,9 @@ public class StopWatch : MonoBehaviour
 
     private bool isPlaying;
     private float roundedNum;
+
+    private OnTickFunc onSecondTick;
+    private OnTickFunc onMinuteTick;
 
     void Start()
     {
@@ -35,11 +40,19 @@ public class StopWatch : MonoBehaviour
             {
                 currentSec++;
                 currentMs = 0;
+                if (onSecondTick != null )
+                {
+                    onSecondTick();
+                }
 
                 if (currentSec == 60)
                 {
                     currentMin++;
                     currentSec = 0;
+                    if (onMinuteTick != null )
+                    {
+                        onMinuteTick();
+                    }
                 }
             }
 
@@ -73,5 +86,15 @@ public class StopWatch : MonoBehaviour
         currentMs = 0;
 
         timer.text = "0:0:0";
+    }
+
+    public void SetOnSecondFunc(OnTickFunc func)
+    {
+        onSecondTick = func;
+    }
+
+    public void SetOnMinuteFunc(OnTickFunc func)
+    {
+        onMinuteTick = func;
     }
 }
