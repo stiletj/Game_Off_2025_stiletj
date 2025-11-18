@@ -104,6 +104,11 @@ public class ScrollEnvironment : MonoBehaviour
         isPaused = false;
     }
 
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
+
     public void IncrementDefaultSpeed(float amount)
     {
         defaultSpeed += amount;

@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
         ScoreTracker.ResetScore();
 
         //stopwatchPrefab.GetComponent<StopWatch>().SetOnSecondFunc(scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC);
+        OnTickFunc secFunc = new OnTickFunc(SpawnNPCWhenScrolling);
+        stopwatchObj.GetComponent<StopWatch>().SetOnSecondFunc(secFunc);
     }
 
     // Update is called once per frame
@@ -39,5 +41,18 @@ public class GameManager : MonoBehaviour
             gameScore = ScoreTracker.GetFinalScore();
             //Destroy(stopwatchObj);
         }
+    }
+
+    public void SpawnNPCWhenScrolling(int min, int sec)
+    {
+        if (!scrollEnvironment.GetComponent<ScrollEnvironment>().IsPaused())
+        {
+            scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC(min, sec);
+        }
+    }
+
+    public void Test(int min, int sec)
+    {
+        Debug.Log("Test");
     }
 }

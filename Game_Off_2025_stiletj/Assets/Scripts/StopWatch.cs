@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public delegate void OnTickFunc();
+public delegate void OnTickFunc(int min, int sec);
 
 public class StopWatch : MonoBehaviour
 {
@@ -14,8 +14,8 @@ public class StopWatch : MonoBehaviour
     private bool isPlaying;
     private float roundedNum;
 
-    private OnTickFunc onSecondTick;
-    private OnTickFunc onMinuteTick;
+    private OnTickFunc onSecondTick = new OnTickFunc(DefaultFunc);
+    private OnTickFunc onMinuteTick = new OnTickFunc(DefaultFunc);
 
     void Start()
     {
@@ -40,9 +40,9 @@ public class StopWatch : MonoBehaviour
             {
                 currentSec++;
                 currentMs = 0;
-                if (onSecondTick != null )
+                if (onSecondTick != null)
                 {
-                    onSecondTick();
+                    onSecondTick.Invoke(currentMin, currentSec);
                 }
 
                 if (currentSec == 60)
@@ -51,7 +51,7 @@ public class StopWatch : MonoBehaviour
                     currentSec = 0;
                     if (onMinuteTick != null )
                     {
-                        onMinuteTick();
+                        onMinuteTick.Invoke(currentMin, currentSec);
                     }
                 }
             }
@@ -91,10 +91,26 @@ public class StopWatch : MonoBehaviour
     public void SetOnSecondFunc(OnTickFunc func)
     {
         onSecondTick = func;
+        onSecondTick.Invoke(currentMin, currentSec);
     }
 
     public void SetOnMinuteFunc(OnTickFunc func)
     {
         onMinuteTick = func;
+    }
+
+    public bool CheckOnSecondFunc()
+    {
+        if (onSecondTick != null)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public static void DefaultFunc(int min, int sec)
+    {
+        Debug.Log("Hello World");
     }
 }

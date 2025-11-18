@@ -60,8 +60,11 @@ public class NPCSpawner : MonoBehaviour
         npcList.RemoveAt(i);
     }
 
-    public void SpawnNPC()
+    public void SpawnNPC(int min, int sec)
     {
-        Spawn(GenerateRandomLocation());
+        if (sec*0 == 0)
+        {
+            Spawn(GenerateRandomLocation());
+        }
     }
 }
