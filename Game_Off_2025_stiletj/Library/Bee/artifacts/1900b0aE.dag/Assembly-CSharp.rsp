@@ -415,11 +415,14 @@
 "Assets/Scripts/ArrowPuzzle.cs"
 "Assets/Scripts/DistanceTracker.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/MenuButtonEvents.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/NPCInteraction.cs"
 "Assets/Scripts/NPCSpawner.cs"
 "Assets/Scripts/ScoreTracker.cs"
 "Assets/Scripts/ScrollEnvironment.cs"
+"Assets/Scripts/SetFinalScore.cs"
+"Assets/Scripts/SetFinalTime.cs"
 "Assets/Scripts/StopWatch.cs"
 -langversion:9.0
 /deterministic

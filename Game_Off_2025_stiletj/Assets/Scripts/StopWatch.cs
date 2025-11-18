@@ -76,6 +76,7 @@ public class StopWatch : MonoBehaviour
     public void StopTimer()
     {
         isPlaying = false;
+        currentMs = roundedNum;
     }
 
     public void ResetTimer()

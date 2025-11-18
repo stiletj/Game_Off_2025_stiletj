@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 enum DirectionInput
 {
@@ -17,6 +17,9 @@ public class ArrowPuzzle : MonoBehaviour
     public GameObject canvas;
     public List<GameObject> arrowImages;
     public bool isComplete;
+    public Material correctMaterial;
+    public Material incorrectMaterial;
+    public float waitTime = 1f;
 
     [SerializeField] private List<DirectionInput> puzzle = new List<DirectionInput>();
     [SerializeField] private int length;
@@ -24,6 +27,9 @@ public class ArrowPuzzle : MonoBehaviour
     private int correctKey;                         //0 = no input, >0 = true, <0 = false
     private bool isDrawn;
     private List<GameObject> arrowObjects = new List<GameObject>();
+    private bool matChanged;
+    private float timer;
+    private bool wait;
 
     public void CreateArrowPuzzle(int _length, GameObject _canvas)
     {
@@ -34,6 +40,9 @@ public class ArrowPuzzle : MonoBehaviour
         correctKey = -1;
         isComplete = false;
         isDrawn = false;
+        matChanged = false;
+        timer = waitTime;
+        wait = false;
     }
 
     // Start is called before the first frame update
@@ -63,48 +72,64 @@ public class ArrowPuzzle : MonoBehaviour
 
         correctKey = 0;
 
-        if (!isComplete)
+        timer -= Time.deltaTime;
+        if (wait && timer <= 0)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            wait = false;
+
+            for (int i = 0; i < arrowObjects.Count; i++)
             {
-                correctKey = CheckInput(0);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                correctKey = CheckInput((DirectionInput)1);
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                correctKey = CheckInput((DirectionInput)2);
-            }
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                correctKey = CheckInput((DirectionInput)3);
+                arrowObjects[i].GetComponent<Image>().material = null;
             }
         }
 
-        if (correctKey > 0)
+        if (!wait)
         {
-            if (currentIndex == length - 1)
+            if (!isComplete)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    correctKey = CheckInput(0);
+                }
+                else if (Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    correctKey = CheckInput((DirectionInput)1);
+                }
+                else if (Input.GetKeyDown(KeyCode.LeftArrow))
+                {
+                    correctKey = CheckInput((DirectionInput)2);
+                }
+                else if (Input.GetKeyDown(KeyCode.RightArrow))
+                {
+                    correctKey = CheckInput((DirectionInput)3);
+                }
+            }
+
+            if (correctKey > 0)
+            {
+                if (currentIndex == length - 1)
+                {
+                    currentIndex = 0;
+                    isComplete = true;
+                }
+                else
+                {
+                    arrowObjects[currentIndex].GetComponent<Image>().material = correctMaterial;
+                    currentIndex++;
+                }
+            }
+            else if (correctKey < 0)
             {
                 currentIndex = 0;
-                isComplete = true;
-                Debug.Log("FINISHED");
+
+                for (int i = 0; i < arrowObjects.Count; i++)
+                {
+                    arrowObjects[i].GetComponent<Image>().material = incorrectMaterial;
+                }
+
+                wait = true;
+                timer = waitTime;
             }
-            else
-            {
-                currentIndex++;
-                Debug.Log("CORRECT");
-            }
-        }
-        else if (correctKey < 0)
-        {
-            currentIndex = 0;
-            Debug.Log("INCORRECT");
-        }
-        else if (isComplete)
-        {
-            Debug.Log("COMPLETE");
         }
     }
 

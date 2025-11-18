@@ -51,6 +51,9 @@ MonoBehaviour:
   - {fileID: 6769179782917877703, guid: fdd13e560fbcebe4688dc69ef03d2ae3, type: 3}
   - {fileID: 5875517620049472631, guid: 7185ad403a26fa84aaa8a7a83bc27988, type: 3}
   isComplete: 0
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  correctMaterial: {fileID: 2100000, guid: e2cad1a6ee8ae1949b2b4a97dd1bf9f6, type: 2}
+  incorrectMaterial: {fileID: 2100000, guid: 58bf745405b94fe479e3c9e9928390f5, type: 2}
   puzzle: 
   length: 0
   currentIndex: 0
