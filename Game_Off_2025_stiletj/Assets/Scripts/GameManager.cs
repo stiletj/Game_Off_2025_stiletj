@@ -4,9 +4,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject canvas;
     public GameObject stopwatchPrefab;
+    public GameObject distanceTrackerPrefab;
     public ScrollEnvironment scrollEnvironment;
+    public int finishDistance = 75;
 
     private GameObject stopwatchObj;
+    private GameObject distanceTrackerObj;
     [SerializeField] private int gameScore = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,7 +17,13 @@ public class GameManager : MonoBehaviour
     {
         stopwatchObj = Instantiate(stopwatchPrefab);
         stopwatchObj.transform.SetParent(canvas.transform, false);
-        stopwatchPrefab.GetComponent<StopWatch>().StartTimer();
+        stopwatchObj.GetComponent<StopWatch>().StartTimer();
+
+        distanceTrackerObj = Instantiate(distanceTrackerPrefab);
+        distanceTrackerObj.transform.SetParent(canvas.transform, false);
+        distanceTrackerObj.GetComponent<DistanceTracker>().SetScrollEnvironment(scrollEnvironment);
+        distanceTrackerObj.GetComponent<DistanceTracker>().SetFinishDistance(finishDistance);
+
         ScoreTracker.ResetScore();
 
         //stopwatchPrefab.GetComponent<StopWatch>().SetOnSecondFunc(scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC);
@@ -25,7 +34,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scrollEnvironment.distance == 75)
+        if (scrollEnvironment.distance == finishDistance)
         {
             EndGame();
             scrollEnvironment.Pause();

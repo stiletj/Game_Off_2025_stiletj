@@ -8,11 +8,11 @@ public class ScrollEnvironment : MonoBehaviour
     public float scrollSpeed;
     public GameObject environPrefab;
     public int distance;
+    public GameObject front;
+    public GameObject back;
 
     private Vector3 updatePos;
     private Vector3 offsetVec;
-    private GameObject front;
-    private GameObject back;
 
     private bool hasUpdated;
     private bool isPaused;
