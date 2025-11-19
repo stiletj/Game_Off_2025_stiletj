@@ -27,7 +27,6 @@ public class ArrowPuzzle : MonoBehaviour
     private int correctKey;                         //0 = no input, >0 = true, <0 = false
     private bool isDrawn;
     private List<GameObject> arrowObjects = new List<GameObject>();
-    private bool matChanged;
     private float timer;
     private bool wait;
 
@@ -40,7 +39,6 @@ public class ArrowPuzzle : MonoBehaviour
         correctKey = -1;
         isComplete = false;
         isDrawn = false;
-        matChanged = false;
         timer = waitTime;
         wait = false;
     }

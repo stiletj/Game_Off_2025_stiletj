@@ -30,7 +30,9 @@ public class NPCInteraction : MonoBehaviour
                 Destroy(puzzle);
                 puzzle = null;
 
-                player.GetComponent<Movement>().UnFreezeMovement(true);
+                player.GetComponent<Movement>().UnFreezeMovement();
+                GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().Play();
+                GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().IncrementDefaultSpeed(-1);
                 player = null;
 
                 ScoreTracker.IncrementInteractionScore();
@@ -53,6 +55,7 @@ public class NPCInteraction : MonoBehaviour
     private void Interact()
     {
         player.GetComponent<Movement>().FreezeMovement();
+        GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().Pause();
 
         puzzle = Instantiate(puzzlePrefab);
         puzzle.transform.parent = transform;

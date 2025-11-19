@@ -26,7 +26,7 @@ public class DistanceTracker : MonoBehaviour
         float percentageOfChunk = distanceThisChunk / chunkLength;
 
         currentTotalDistance = scrollEnvironment.distance * realworldDistanceOfChunk + Mathf.RoundToInt(realworldDistanceOfChunk * percentageOfChunk);
-        distance.text = finishDistance * realworldDistanceOfChunk - currentTotalDistance + "m";
+        distance.text = finishDistance * realworldDistanceOfChunk - currentTotalDistance + 50 + "m";
     }
 
     public void SetScrollEnvironment(ScrollEnvironment _scrollEnvironment)

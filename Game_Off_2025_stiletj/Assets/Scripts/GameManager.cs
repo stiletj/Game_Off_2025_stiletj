@@ -9,12 +9,14 @@ public class GameManager : MonoBehaviour
     public GameObject distanceTrackerPrefab;
     public GameObject player;
     public GameObject pauseMenu;
+    public GameObject endResults;
     public ScrollEnvironment scrollEnvironment;
     public int finishDistance = 75;
     public int gameScore = 0;
 
     private GameObject stopwatchObj;
     private GameObject distanceTrackerObj;
+    private bool isEnding;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,19 +32,19 @@ public class GameManager : MonoBehaviour
 
         ScoreTracker.ResetScore();
 
-        //stopwatchPrefab.GetComponent<StopWatch>().SetOnSecondFunc(scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC);
         OnTickFunc secFunc = new OnTickFunc(SpawnNPCWhenScrolling);
         stopwatchObj.GetComponent<StopWatch>().SetOnSecondFunc(secFunc);
+
+        isEnding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (scrollEnvironment.distance == finishDistance)
-        {
-            EndGame();
-            scrollEnvironment.Pause();
-        }
+        //if (scrollEnvironment.distance == finishDistance && !isEnding)
+        //{
+        //    EndGame();
+        //}
 
         if (Input.GetKey(KeyCode.Escape))
         {
@@ -50,16 +52,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void EndGame()
+    public void EndGame()
     {
         if (stopwatchObj != null)
         {
+            player.GetComponent<Movement>().FreezeMovement();
             stopwatchObj.GetComponent<StopWatch>().StopTimer();
             ScoreTracker.CalcTimeScore(stopwatchObj.GetComponent<StopWatch>().currentMin * 60f + stopwatchObj.GetComponent<StopWatch>().currentSec + stopwatchObj.GetComponent<StopWatch>().currentMs / 100f);
             gameScore = ScoreTracker.GetFinalScore();
-            //Destroy(stopwatchObj);
 
-            GameObject.Find("SceneManager").GetComponent<MenuButtonEvents>().EndGame();
+            isEnding = true;
         }
     }
 
@@ -74,13 +76,15 @@ public class GameManager : MonoBehaviour
     public void PauseGame()
     {
         player.GetComponent<Movement>().FreezeMovement();
+        scrollEnvironment.GetComponent<ScrollEnvironment>().Pause();
         stopwatchObj.GetComponent<StopWatch>().StopTimer();
         pauseMenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
-        player.GetComponent<Movement>().UnFreezeMovement(false);
+        player.GetComponent<Movement>().UnFreezeMovement();
+        scrollEnvironment.GetComponent<ScrollEnvironment>().Play();
         stopwatchObj.GetComponent<StopWatch>().StartTimer();
         pauseMenu.SetActive(false);
     }
@@ -100,8 +104,9 @@ public class GameManager : MonoBehaviour
         return stopwatchObj.GetComponent<StopWatch>().currentMs;
     }
 
-    public void Test(int min, int sec)
+    public void ShowEndResults()
     {
-        Debug.Log("Test");
+        endResults.SetActive(true);
+        endResults.GetComponent<EndResults>().UpdateResults(FinalMin(), FinalSec(), Mathf.RoundToInt(FinalMs()), gameScore);
     }
 }

@@ -46,16 +46,10 @@ public class Movement : MonoBehaviour
     public void FreezeMovement()
     {
         isFrozen = true;
-        environmentManager.Pause();
     }
 
-    public void UnFreezeMovement(bool increment)
+    public void UnFreezeMovement()
     {
         isFrozen = false;
-        if (increment)
-        {
-            environmentManager.IncrementDefaultSpeed(-1);
-        }
-        environmentManager.Play();
     }
 }

@@ -10,6 +10,10 @@ public class NPCSpawner : MonoBehaviour
     public Vector3 maxSpawnRange;
     public Vector3 minDespawnRange;
     public Vector3 maxDespawnRange;
+    public List<Vector3> minSpawnRanges;
+    public List<Vector3> maxSpawnRanges;
+    public List<Vector3> minDespawnRanges;
+    public List<Vector3> maxDespawnRanges;
 
     private List<GameObject> npcList = new List<GameObject>();
 
@@ -24,34 +28,62 @@ public class NPCSpawner : MonoBehaviour
     {
         for (int i = 0; i < npcList.Count; i++)
         {
-            if (npcList[i].transform.position.x <= maxDespawnRange.x && npcList[i].transform.position.x >= minDespawnRange.x)
+            for (int j = 0; j < maxDespawnRanges.Count; j++)
             {
-                if (npcList[i].transform.position.y <= maxDespawnRange.y && npcList[i].transform.position.y >= minDespawnRange.y)
+                if (npcList[i].transform.position.x <= maxDespawnRanges[j].x && npcList[i].transform.position.x >= minDespawnRanges[j].x)
                 {
-                    if (npcList[i].transform.position.z <= maxDespawnRange.z && npcList[i].transform.position.z >= minDespawnRange.z)
+                    if (npcList[i].transform.position.y <= maxDespawnRanges[j].y && npcList[i].transform.position.y >= minDespawnRanges[j].y)
                     {
-                        Despawn(i);
+                        if (npcList[i].transform.position.z <= maxDespawnRanges[j].z && npcList[i].transform.position.z >= minDespawnRanges[j].z)
+                        {
+                            Despawn(i);
+                        }
                     }
                 }
             }
         }
     }
 
-    private Vector3 GenerateRandomLocation()
+    private List<Vector3> GenerateRandomLocation(bool spawnAllLocations)
     {
+        List<Vector3> list = new List<Vector3>();
         Vector3 pos = Vector3.zero;
-        pos.x = Random.Range(minSpawnRange.x, maxSpawnRange.x);
-        pos.y = Random.Range(minSpawnRange.y, maxSpawnRange.y);
-        pos.z = Random.Range(minSpawnRange.z, maxSpawnRange.z);
 
-        return pos;
+        if (spawnAllLocations)
+        {
+            for (int i = 0; i < minSpawnRanges.Count; i++)
+            {
+                pos.x = Random.Range(minSpawnRanges[i].x, maxSpawnRanges[i].x);
+                pos.y = Random.Range(minSpawnRanges[i].y, maxSpawnRanges[i].y);
+                pos.z = Random.Range(minSpawnRanges[i].z, maxSpawnRanges[i].z);
+
+                list.Add(pos);
+            }
+        }
+        else
+        {
+            int i = Random.Range(0, minSpawnRanges.Count);
+
+            pos.x = Random.Range(minSpawnRanges[i].x, maxSpawnRanges[i].x);
+            pos.y = Random.Range(minSpawnRanges[i].y, maxSpawnRanges[i].y);
+            pos.z = Random.Range(minSpawnRanges[i].z, maxSpawnRanges[i].z);
+
+            list.Add(pos);
+        }
+
+        return list;
     }
 
-    private void Spawn(Vector3 location)
+    private void Spawn()
     {
-        npcList.Add(Instantiate(npcPrefab));
-        npcList[npcList.Count - 1].transform.position = location;
-        npcList[npcList.Count - 1].GetComponent<NPCInteraction>().canvas = canvas;
+        List<Vector3> location = GenerateRandomLocation(false);
+
+        for (int i = 0; i < location.Count; i++)
+        {
+            npcList.Add(Instantiate(npcPrefab));
+            npcList[npcList.Count - 1].transform.position = location[i];
+            npcList[npcList.Count - 1].GetComponent<NPCInteraction>().canvas = canvas;
+        }
     }
 
     private void Despawn(int i)
@@ -64,7 +96,7 @@ public class NPCSpawner : MonoBehaviour
     {
         if (sec*0 == 0)
         {
-            Spawn(GenerateRandomLocation());
+            Spawn();
         }
     }
 }

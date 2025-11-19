@@ -64,14 +64,17 @@
     <Compile Include="Assets\Scripts\SetFinalTime.cs" />
     <Compile Include="Assets\Scripts\SetFinalScore.cs" />
     <Compile Include="Assets\Scripts\NPCInteraction.cs" />
+    <Compile Include="Assets\Scripts\EndResults.cs" />
     <Compile Include="Assets\Scripts\NPCSpawner.cs" />
     <Compile Include="Assets\Scripts\StopWatch.cs" />
     <Compile Include="Assets\Scripts\MenuButtonEvents.cs" />
     <Compile Include="Assets\Scripts\ScrollEnvironment.cs" />
     <Compile Include="Assets\Scripts\ScoreTracker.cs" />
+    <Compile Include="Assets\Scripts\EndGameTrigger.cs" />
     <Compile Include="Assets\Scripts\ArrowPuzzle.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\CutsceneTrigger.cs" />
     <Compile Include="Assets\Scripts\DistanceTracker.cs" />
   </ItemGroup>
   <ItemGroup>
