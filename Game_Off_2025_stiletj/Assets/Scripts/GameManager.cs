@@ -16,7 +16,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject stopwatchObj;
     private GameObject distanceTrackerObj;
-    private bool isEnding;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,18 +33,11 @@ public class GameManager : MonoBehaviour
 
         OnTickFunc secFunc = new OnTickFunc(SpawnNPCWhenScrolling);
         stopwatchObj.GetComponent<StopWatch>().SetOnSecondFunc(secFunc);
-
-        isEnding = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (scrollEnvironment.distance == finishDistance && !isEnding)
-        //{
-        //    EndGame();
-        //}
-
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseGame();
@@ -60,8 +52,6 @@ public class GameManager : MonoBehaviour
             stopwatchObj.GetComponent<StopWatch>().StopTimer();
             ScoreTracker.CalcTimeScore(stopwatchObj.GetComponent<StopWatch>().currentMin * 60f + stopwatchObj.GetComponent<StopWatch>().currentSec + stopwatchObj.GetComponent<StopWatch>().currentMs / 100f);
             gameScore = ScoreTracker.GetFinalScore();
-
-            isEnding = true;
         }
     }
 
