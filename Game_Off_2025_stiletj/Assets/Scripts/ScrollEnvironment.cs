@@ -97,10 +97,7 @@ public class ScrollEnvironment : MonoBehaviour
                 }
                 else
                 {
-                    front = Instantiate(finalChunkPrefab);
-                    front.transform.position = back.transform.position + finalChunkOffset;
-
-                    hasUpdated = true;
+                    LoadFinalChunk();
                 }
             }
         }
@@ -133,6 +130,18 @@ public class ScrollEnvironment : MonoBehaviour
         {
             hasUpdated = false;
         }
+    }
+
+    private void LoadFinalChunk()
+    {
+        front = Instantiate(finalChunkPrefab);
+        front.transform.position = back.transform.position + finalChunkOffset;
+
+        hasUpdated = true;
+
+        NPCSpawner spawner = GetComponent<NPCSpawner>();
+
+        spawner.PauseSpawning();
     }
 
     public void UpdateEnvironmentPosition(float scrollSpeed)

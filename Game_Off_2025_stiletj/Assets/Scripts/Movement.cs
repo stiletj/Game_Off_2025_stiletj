@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public float verticalMoveSpeed;
     public ScrollEnvironment environmentManager;
 
-    private bool isFrozen;
+    public bool isFrozen;
 
     // Start is called before the first frame update
     void Start()

@@ -4,6 +4,7 @@ public class AnimateMovement : MonoBehaviour
 {
     public ScrollEnvironment scrollEnvironment;
 
+    private Movement movement;
     private Animator animator;
 
     private bool isLeft;
@@ -17,17 +18,21 @@ public class AnimateMovement : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        movement = GetComponent<Movement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        isLeft = Input.GetKey(KeyCode.A);
-        isRight = Input.GetKey(KeyCode.D);
+        if (!movement.isFrozen)
+        {
+            isLeft = Input.GetKey(KeyCode.A);
+            isRight = Input.GetKey(KeyCode.D);
 
-        animator.SetBool(left, isLeft);
-        animator.SetBool(right, isRight);
+            animator.SetBool(left, isLeft);
+            animator.SetBool(right, isRight);
 
-        animator.SetBool(idle, scrollEnvironment.IsPaused());
+            animator.SetBool(idle, scrollEnvironment.IsPaused());
+        }
     }
 }

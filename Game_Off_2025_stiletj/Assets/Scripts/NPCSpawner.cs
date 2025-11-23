@@ -16,11 +16,12 @@ public class NPCSpawner : MonoBehaviour
     public List<Vector3> maxDespawnRanges;
 
     private List<GameObject> npcList = new List<GameObject>();
+    private bool isPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Spawn(GenerateRandomLocation());
+        isPaused = false;
     }
 
     // Update is called once per frame
@@ -94,9 +95,22 @@ public class NPCSpawner : MonoBehaviour
 
     public void SpawnNPC(int min, int sec)
     {
-        if (sec*0 == 0)
+        if (!isPaused)
         {
-            Spawn();
+            if (sec * 0 == 0)
+            {
+                Spawn();
+            }
         }
+    }
+
+    public void PauseSpawning()
+    {
+        isPaused = true;
+    }
+
+    public void PlaySpawning()
+    {
+        isPaused = false;
     }
 }

@@ -593,12 +593,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1705647114036781635, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 752595655}
+    - target: {fileID: 1705647114036781635, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
       propertyPath: scrollEnvironment
       value: 
       objectReference: {fileID: 1612139323}
     - target: {fileID: 6138013906945734075, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
       propertyPath: m_Name
-      value: Player 2
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7908711037103727014, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
       propertyPath: environmentManager
@@ -649,6 +653,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
+--- !u!1 &752595654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6138013906945734075, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
+  m_PrefabInstance: {fileID: 711927394}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &752595655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7908711037103727014, guid: 73d52c18dbade034d9431947e324a2a2, type: 3}
+  m_PrefabInstance: {fileID: 711927394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752595654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 958567116b71bba4799f275a911006fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &950479092
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +701,7 @@ MonoBehaviour:
   canvas: {fileID: 2104310474}
   stopwatchPrefab: {fileID: 3012972247109696232, guid: 945ffbde637cd9e4abd4d71018ab1ce7, type: 3}
   distanceTrackerPrefab: {fileID: 8953514524282082923, guid: b4e63cbe29146a44f842fa5b7be346fc, type: 3}
-  player: {fileID: 0}
+  player: {fileID: 752595654}
   pauseMenu: {fileID: 2028042318}
   endResults: {fileID: 1588334625}
   scrollEnvironment: {fileID: 1612139323}
