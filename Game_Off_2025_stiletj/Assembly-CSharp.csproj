@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\SetFinalScore.cs" />
     <Compile Include="Assets\Scripts\AnimateMovement.cs" />
     <Compile Include="Assets\Scripts\NPCInteraction.cs" />
+    <Compile Include="Assets\Scripts\CarSpawner.cs" />
     <Compile Include="Assets\Scripts\EndResults.cs" />
     <Compile Include="Assets\Scripts\NPCSpawner.cs" />
     <Compile Include="Assets\Scripts\StopWatch.cs" />

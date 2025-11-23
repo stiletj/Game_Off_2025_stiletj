@@ -60,6 +60,8 @@ public class ScrollEnvironment : MonoBehaviour
             isEnding = true;
         }
 
+        //Debug.Log(isPaused);
+
         if (!isPaused)
         {
             UpdateEnvironmentPosition(scrollSpeed);

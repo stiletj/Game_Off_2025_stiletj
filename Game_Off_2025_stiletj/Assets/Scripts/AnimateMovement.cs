@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AnimateMovement : MonoBehaviour
 {
-    public ScrollEnvironment scrollEnvironment;
+    public GameObject scrollEnvironment;
 
     private Movement movement;
     private Animator animator;
@@ -14,11 +14,14 @@ public class AnimateMovement : MonoBehaviour
     private string right = "Right";
     private string idle = "Idle";
 
+    private ScrollEnvironment scrollManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
         movement = GetComponent<Movement>();
+        scrollManager = scrollEnvironment.GetComponent<ScrollEnvironment>();
     }
 
     // Update is called once per frame
@@ -32,7 +35,7 @@ public class AnimateMovement : MonoBehaviour
             animator.SetBool(left, isLeft);
             animator.SetBool(right, isRight);
 
-            animator.SetBool(idle, scrollEnvironment.IsPaused());
+            animator.SetBool(idle, scrollManager.IsPaused());
         }
     }
 }

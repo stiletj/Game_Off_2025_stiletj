@@ -31,6 +31,7 @@ public class NPCInteraction : MonoBehaviour
                 puzzle = null;
 
                 player.GetComponent<Movement>().UnFreezeMovement();
+                player.GetComponent<Movement>().interacting = false;
                 GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().Play();
                 GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().IncrementDefaultSpeed(-1);
                 player = null;
@@ -55,6 +56,7 @@ public class NPCInteraction : MonoBehaviour
     private void Interact()
     {
         player.GetComponent<Movement>().FreezeMovement();
+        player.GetComponent<Movement>().interacting = true;
         GameObject.Find("Environment Manager").GetComponent<ScrollEnvironment>().Pause();
 
         puzzle = Instantiate(puzzlePrefab);

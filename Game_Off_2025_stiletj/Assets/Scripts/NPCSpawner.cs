@@ -81,6 +81,7 @@ public class NPCSpawner : MonoBehaviour
 
         for (int i = 0; i < location.Count; i++)
         {
+            location[i] = new Vector3(location[i].x, 0.2f, location[i].z);
             npcList.Add(Instantiate(npcPrefab));
             npcList[npcList.Count - 1].transform.position = location[i];
             npcList[npcList.Count - 1].GetComponent<NPCInteraction>().canvas = canvas;
