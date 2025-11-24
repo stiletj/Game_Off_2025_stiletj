@@ -151,6 +151,7 @@ public class ScrollEnvironment : MonoBehaviour
     {
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Scrollable"))
         {
+            //obj.GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, scrollSpeed * Time.deltaTime);
             obj.transform.position += new Vector3(0, 0, scrollSpeed * Time.deltaTime);
         }
     }

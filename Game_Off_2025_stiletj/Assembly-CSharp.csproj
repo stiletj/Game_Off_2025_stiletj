@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HitsCar.cs" />
+    <Compile Include="Assets\Scripts\SetFinalDistance.cs" />
     <Compile Include="Assets\Scripts\CutsceneTrigger.cs" />
     <Compile Include="Assets\Scripts\DistanceTracker.cs" />
   </ItemGroup>

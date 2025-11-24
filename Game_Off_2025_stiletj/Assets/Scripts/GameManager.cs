@@ -15,11 +15,11 @@ public class GameManager : MonoBehaviour
     public int finishDistance = 75;
     public float gameScore = 0;
     public float timeToWait = 3;
+    public int distanceRan;
 
     private GameObject stopwatchObj;
     private GameObject distanceTrackerObj;
     private GameObject hitByCar;
-    private int distanceRan;
     private bool waitToEnd;
     private float timer;
 
@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour
         {
             player.GetComponent<Movement>().FreezeMovement();
             stopwatchObj.GetComponent<StopWatch>().StopTimer();
+            GetComponent<CarSpawner>().PauseSpawning();
+            GetComponent<CarSpawner>().PauseAllMoving();
             ScoreTracker.CalcTimeScore(stopwatchObj.GetComponent<StopWatch>().currentMin * 60f + stopwatchObj.GetComponent<StopWatch>().currentSec + stopwatchObj.GetComponent<StopWatch>().currentMs / 100f);
             gameScore = (float)ScoreTracker.GetFinalScore() * ((float)distanceTrackerObj.GetComponent<DistanceTracker>().currentTotalDistance / (finishDistance * distanceTrackerObj.GetComponent<DistanceTracker>().realworldDistanceOfChunk));
             distanceRan = distanceTrackerObj.GetComponent<DistanceTracker>().currentTotalDistance;

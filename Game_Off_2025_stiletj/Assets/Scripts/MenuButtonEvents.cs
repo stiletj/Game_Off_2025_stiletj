@@ -50,6 +50,7 @@ public class MenuButtonEvents : MonoBehaviour
         PlayerPrefs.SetInt("LastMin", gameManager.GetComponent<GameManager>().FinalMin());
         PlayerPrefs.SetInt("LastSec", gameManager.GetComponent<GameManager>().FinalSec());
         PlayerPrefs.SetFloat("LastMs", gameManager.GetComponent<GameManager>().FinalMs());
+        PlayerPrefs.SetInt("LastDistance", gameManager.GetComponent<GameManager>().distanceRan);
 
         SceneManager.LoadScene(2);
     }

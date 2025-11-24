@@ -3710,9 +3710,9 @@ GameObject:
   - component: {fileID: 5921685184118688092}
   - component: {fileID: 1077641867844618139}
   - component: {fileID: 1518197152907956179}
-  - component: {fileID: 7251951559886799829}
   - component: {fileID: 8588300601987540164}
   - component: {fileID: 5296777166685517323}
+  - component: {fileID: -5068877260341040444}
   m_Layer: 7
   m_Name: NPC
   m_TagString: Scrollable
@@ -3783,33 +3783,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.96, z: 0}
---- !u!54 &7251951559886799829
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5770855727999846901}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 118
-  m_CollisionDetection: 0
 --- !u!65 &8588300601987540164
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3845,6 +3818,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzlePrefab: {fileID: 7487012856510675208, guid: 95f17033918a1fe4e9c0b908b5ac4828, type: 3}
   canvas: {fileID: 0}
+--- !u!54 &-5068877260341040444
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770855727999846901}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &5773571634345496740
 GameObject:
   m_ObjectHideFlags: 0

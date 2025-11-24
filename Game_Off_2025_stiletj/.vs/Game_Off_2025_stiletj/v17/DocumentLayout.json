@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|d:\\github\\game_off_2025_stiletj\\game_off_2025_stiletj\\assets\\scripts\\setfinaldistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setfinaldistance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\menubuttonevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menubuttonevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|d:\\github\\game_off_2025_stiletj\\game_off_2025_stiletj\\assets\\scripts\\setfinaltime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setfinaltime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\endresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\carspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\scrollenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scrollenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\animatemovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,14 +43,6 @@
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endgametrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\carspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\menubuttonevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menubuttonevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\distancetracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\distancetracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,19 +51,7 @@
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scoretracker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\endresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endresults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\scrollenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scrollenvironment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|d:\\github\\game_off_2025_stiletj\\game_off_2025_stiletj\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|d:\\github\\game_off_2025_stiletj\\game_off_2025_stiletj\\assets\\scripts\\hitscar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\hitscar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hitscar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -63,10 +71,6 @@
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cutscenetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\setfinaltime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\setfinaltime.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\assets\\scripts\\arrowpuzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{92BC83FB-AA00-8B87-1AE5-39B40E20F7AA}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\arrowpuzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -82,11 +86,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 0,
+              "Title": "SetFinalDistance.cs",
+              "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\SetFinalDistance.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SetFinalDistance.cs",
+              "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\SetFinalDistance.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SetFinalDistance.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T06:43:16.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "HitsCar.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\HitsCar.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\HitsCar.cs",
@@ -94,25 +111,23 @@
               "RelativeToolTip": "Assets\\Scripts\\HitsCar.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAowDsAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T04:07:58.159Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T04:07:58.159Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "CarSpawner.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\CarSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CarSpawner.cs",
               "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\CarSpawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\CarSpawner.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAQwFIAAABcAAAA",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAgwFwAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T14:29:35.909Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T14:29:35.909Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "AnimateMovement.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\AnimateMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\AnimateMovement.cs",
@@ -120,12 +135,11 @@
               "RelativeToolTip": "Assets\\Scripts\\AnimateMovement.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-20T06:25:29.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T06:25:29.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "EndResults.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\EndResults.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EndResults.cs",
@@ -133,12 +147,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EndResults.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T07:05:04.659Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T07:05:04.659Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "EndGameTrigger.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\EndGameTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EndGameTrigger.cs",
@@ -146,12 +159,11 @@
               "RelativeToolTip": "Assets\\Scripts\\EndGameTrigger.cs",
               "ViewState": "AQIAAAUAAAAAAAAAAAAQwBQAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T06:50:24.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-19T06:50:24.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CutsceneTrigger.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\CutsceneTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CutsceneTrigger.cs",
@@ -163,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "SetFinalScore.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\SetFinalScore.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SetFinalScore.cs",
@@ -175,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 2,
               "Title": "SetFinalTime.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\SetFinalTime.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SetFinalTime.cs",
@@ -183,24 +195,25 @@
               "RelativeToolTip": "Assets\\Scripts\\SetFinalTime.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T11:08:01.874Z"
+              "WhenOpened": "2025-11-18T11:08:01.874Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "MenuButtonEvents.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\MenuButtonEvents.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MenuButtonEvents.cs",
               "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\MenuButtonEvents.cs",
               "RelativeToolTip": "Assets\\Scripts\\MenuButtonEvents.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAQwDAAAABrAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAAAwwDQAAABgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-18T10:14:59.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "DistanceTracker.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\DistanceTracker.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\DistanceTracker.cs",
@@ -208,38 +221,36 @@
               "RelativeToolTip": "Assets\\Scripts\\DistanceTracker.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAQwBcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T09:05:40.88Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-18T09:05:40.88Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "ScrollEnvironment.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\ScrollEnvironment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScrollEnvironment.cs",
               "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\ScrollEnvironment.cs",
               "RelativeToolTip": "Assets\\Scripts\\ScrollEnvironment.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBsAAAALAAAA",
+              "ViewState": "AQIAAIsAAAAAAAAAAAAgwJkAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T05:00:21.751Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T05:00:21.751Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAgwDgAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T15:46:24.436Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "StopWatch.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\StopWatch.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StopWatch.cs",
@@ -251,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "ScoreTracker.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\ScoreTracker.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScoreTracker.cs",
@@ -259,12 +270,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ScoreTracker.cs",
               "ViewState": "AQIAAAgAAAAAAAAAAAAAABgAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-12T15:33:41.442Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-12T15:33:41.442Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "NPCSpawner.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\NPCSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NPCSpawner.cs",
@@ -276,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "NPCInteraction.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\NPCInteraction.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\NPCInteraction.cs",
@@ -288,20 +298,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 6,
               "Title": "Movement.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\Movement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Movement.cs",
               "ToolTip": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\Movement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Movement.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwB0AAAAAAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAA9wGAAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-07T04:34:23.206Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-07T04:34:23.206Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "ArrowPuzzle.cs",
               "DocumentMoniker": "D:\\GitHub\\Game_Off_2025_stiletj\\Game_Off_2025_stiletj\\Assets\\Scripts\\ArrowPuzzle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ArrowPuzzle.cs",

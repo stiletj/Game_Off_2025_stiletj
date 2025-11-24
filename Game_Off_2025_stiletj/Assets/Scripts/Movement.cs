@@ -21,12 +21,15 @@ public class Movement : MonoBehaviour
     private string right = "Right";
     private string idle = "Idle";
 
+    private bool freezeForward;
+
     // Start is called before the first frame update
     void Start()
     {
         isFrozen = false;
         interacting = false;
         animator = GetComponent<Animator>();
+        freezeForward = false;
     }
 
     // Update is called once per frame
@@ -34,9 +37,12 @@ public class Movement : MonoBehaviour
     {
         if (!isFrozen)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (!freezeForward)
             {
-                transform.Translate(new Vector3(0, 0, verticalMoveSpeed * Time.deltaTime));
+                if (Input.GetKey(KeyCode.W))
+                {
+                    transform.Translate(new Vector3(0, 0, verticalMoveSpeed * Time.deltaTime));
+                }
             }
 
             if (Input.GetKey(KeyCode.A))
@@ -62,13 +68,6 @@ public class Movement : MonoBehaviour
 
             animator.SetBool(idle, environmentManager.IsPaused());
         }
-        //else
-        //{
-        //    if (interacting)
-        //    {
-        //        animator.SetBool(idle, environmentManager.IsPaused());
-        //    }
-        //}
 
         animator.SetBool(idle, environmentManager.IsPaused());
     }
@@ -81,5 +80,21 @@ public class Movement : MonoBehaviour
     public void UnFreezeMovement()
     {
         isFrozen = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            freezeForward = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.layer == 8)
+        {
+            freezeForward = false;
+        }
     }
 }

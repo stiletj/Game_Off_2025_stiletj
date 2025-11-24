@@ -430,6 +430,7 @@
 "Assets/Scripts/NPCSpawner.cs"
 "Assets/Scripts/ScoreTracker.cs"
 "Assets/Scripts/ScrollEnvironment.cs"
+"Assets/Scripts/SetFinalDistance.cs"
 "Assets/Scripts/SetFinalScore.cs"
 "Assets/Scripts/SetFinalTime.cs"
 "Assets/Scripts/StopWatch.cs"

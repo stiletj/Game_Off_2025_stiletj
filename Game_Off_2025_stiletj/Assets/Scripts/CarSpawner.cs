@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 
 public class CarSpawner : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CarSpawner : MonoBehaviour
     private bool isPaused;
     private List<GameObject> cars = new List<GameObject>();
     private List<GameObject> pausedCars = new List<GameObject>();
+
+    private bool movingIsPaused;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,8 +38,14 @@ public class CarSpawner : MonoBehaviour
                 timer = Random.Range(minTime, maxTime);
             }
         }
+    }
 
-        MoveCars();
+    private void FixedUpdate()
+    {
+        if (!movingIsPaused)
+        {
+            MoveCars();
+        }
     }
 
     private void SpawnCar()
@@ -80,6 +89,7 @@ public class CarSpawner : MonoBehaviour
 
             if (!paused)
             {
+                //cars[i].GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -carSpeed * Time.deltaTime);
                 cars[i].transform.position += new Vector3(0, 0, -carSpeed * Time.deltaTime);
             }
         }
@@ -118,5 +128,15 @@ public class CarSpawner : MonoBehaviour
                 pausedCars.Remove(cars[i]);
             }
         }
+    }
+
+    public void PauseAllMoving()
+    {
+        movingIsPaused = true;
+    }
+
+    public void PlayAllMoving()
+    {
+        movingIsPaused = false;
     }
 }
