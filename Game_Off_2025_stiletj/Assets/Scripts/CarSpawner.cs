@@ -14,7 +14,7 @@ public class CarSpawner : MonoBehaviour
     private float timer;
     private bool isPaused;
     private List<GameObject> cars = new List<GameObject>();
-    private List<int> pausedCars = new List<int>();
+    private List<GameObject> pausedCars = new List<GameObject>();
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -64,9 +64,24 @@ public class CarSpawner : MonoBehaviour
 
     private void MoveCars()
     {
+        bool paused = false;
+
         for (int i = 0; i < cars.Count; i++)
         {
-            cars[i].transform.position += new Vector3(0, 0, -carSpeed * Time.deltaTime);
+            paused = false;
+
+            for (int j = 0; j < pausedCars.Count; j++)
+            {
+                if (pausedCars[j] == cars[i])
+                {
+                    paused = true;
+                }
+            }
+
+            if (!paused)
+            {
+                cars[i].transform.position += new Vector3(0, 0, -carSpeed * Time.deltaTime);
+            }
         }
     }
 
@@ -82,11 +97,25 @@ public class CarSpawner : MonoBehaviour
 
     public void PauseCar(GameObject car)
     {
-        for (int i = 0;i < cars.Count;i++)
+        for (int i = 0; i < cars.Count;i++)
         {
             if (car == cars[i])
             {
-                pausedCars.Add(i);
+                if (!pausedCars.Contains(cars[i]))
+                {
+                    pausedCars.Add(cars[i]);
+                }
+            }
+        }
+    }
+
+    public void PlayCar(GameObject car)
+    {
+        for (int i = 0; i < cars.Count; i++)
+        {
+            if (car == cars[i])
+            {
+                pausedCars.Remove(cars[i]);
             }
         }
     }

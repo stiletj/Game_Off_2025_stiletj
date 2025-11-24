@@ -423,6 +423,7 @@
 "Assets/Scripts/EndGameTrigger.cs"
 "Assets/Scripts/EndResults.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/HitsCar.cs"
 "Assets/Scripts/MenuButtonEvents.cs"
 "Assets/Scripts/Movement.cs"
 "Assets/Scripts/NPCInteraction.cs"

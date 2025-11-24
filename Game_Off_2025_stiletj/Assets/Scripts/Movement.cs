@@ -32,8 +32,6 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(environmentManager.IsPaused());
-
         if (!isFrozen)
         {
             if (Input.GetKey(KeyCode.W))
@@ -64,13 +62,15 @@ public class Movement : MonoBehaviour
 
             animator.SetBool(idle, environmentManager.IsPaused());
         }
-        else
-        {
-            if (interacting)
-            {
-                animator.SetBool(idle, environmentManager.IsPaused());
-            }
-        }
+        //else
+        //{
+        //    if (interacting)
+        //    {
+        //        animator.SetBool(idle, environmentManager.IsPaused());
+        //    }
+        //}
+
+        animator.SetBool(idle, environmentManager.IsPaused());
     }
 
     public void FreezeMovement()
@@ -81,13 +81,5 @@ public class Movement : MonoBehaviour
     public void UnFreezeMovement()
     {
         isFrozen = false;
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == 7)
-        {
-            environmentManager.Pause();
-        }
     }
 }

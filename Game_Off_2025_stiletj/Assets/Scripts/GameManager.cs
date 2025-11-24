@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System.Xml.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,10 +13,15 @@ public class GameManager : MonoBehaviour
     public GameObject endResults;
     public ScrollEnvironment scrollEnvironment;
     public int finishDistance = 75;
-    public int gameScore = 0;
+    public float gameScore = 0;
+    public float timeToWait = 3;
 
     private GameObject stopwatchObj;
     private GameObject distanceTrackerObj;
+    private GameObject hitByCar;
+    private int distanceRan;
+    private bool waitToEnd;
+    private float timer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +39,8 @@ public class GameManager : MonoBehaviour
 
         OnTickFunc secFunc = new OnTickFunc(SpawnNPCWhenScrolling);
         stopwatchObj.GetComponent<StopWatch>().SetOnSecondFunc(secFunc);
+
+        waitToEnd = false;
     }
 
     // Update is called once per frame
@@ -41,6 +49,15 @@ public class GameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseGame();
+        }
+
+        if (waitToEnd)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                GameObject.Find("SceneManager").GetComponent<MenuButtonEvents>().EndGame();
+            }
         }
     }
 
@@ -51,7 +68,11 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Movement>().FreezeMovement();
             stopwatchObj.GetComponent<StopWatch>().StopTimer();
             ScoreTracker.CalcTimeScore(stopwatchObj.GetComponent<StopWatch>().currentMin * 60f + stopwatchObj.GetComponent<StopWatch>().currentSec + stopwatchObj.GetComponent<StopWatch>().currentMs / 100f);
-            gameScore = ScoreTracker.GetFinalScore();
+            gameScore = (float)ScoreTracker.GetFinalScore() * ((float)distanceTrackerObj.GetComponent<DistanceTracker>().currentTotalDistance / (finishDistance * distanceTrackerObj.GetComponent<DistanceTracker>().realworldDistanceOfChunk));
+            distanceRan = distanceTrackerObj.GetComponent<DistanceTracker>().currentTotalDistance;
+
+            waitToEnd = true;
+            timer = timeToWait;
         }
     }
 
@@ -59,7 +80,7 @@ public class GameManager : MonoBehaviour
     {
         if (!scrollEnvironment.GetComponent<ScrollEnvironment>().IsPaused())
         {
-            scrollEnvironment.gameObject.GetComponent<NPCSpawner>().SpawnNPC(min, sec);
+            GetComponent<NPCSpawner>().SpawnNPC(min, sec);
         }
     }
 
@@ -97,6 +118,6 @@ public class GameManager : MonoBehaviour
     public void ShowEndResults()
     {
         endResults.SetActive(true);
-        endResults.GetComponent<EndResults>().UpdateResults(FinalMin(), FinalSec(), Mathf.RoundToInt(FinalMs()), gameScore);
+        endResults.GetComponent<EndResults>().UpdateResults(distanceRan, FinalMin(), FinalSec(), Mathf.RoundToInt(FinalMs()), Mathf.RoundToInt(gameScore));
     }
 }

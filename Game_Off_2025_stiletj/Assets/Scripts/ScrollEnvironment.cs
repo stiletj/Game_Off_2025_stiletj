@@ -141,9 +141,10 @@ public class ScrollEnvironment : MonoBehaviour
 
         hasUpdated = true;
 
-        NPCSpawner spawner = GetComponent<NPCSpawner>();
+        GameObject gameManager = GameObject.Find("GameManager");
 
-        spawner.PauseSpawning();
+        gameManager.GetComponent<NPCSpawner>().PauseSpawning();
+        gameManager.GetComponent<CarSpawner>().PauseSpawning();
     }
 
     public void UpdateEnvironmentPosition(float scrollSpeed)
@@ -178,5 +179,15 @@ public class ScrollEnvironment : MonoBehaviour
     private int GetRandomEnviron()
     {
         return Random.Range(0, environPrefabs.Count);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Pause();
+            GameObject.Find("GameManager").GetComponent<GameManager>().EndGame();
+            GameObject.Find("GameManager").GetComponent<GameManager>().ShowEndResults();
+        }
     }
 }

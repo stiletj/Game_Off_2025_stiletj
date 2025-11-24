@@ -46,7 +46,7 @@ public class MenuButtonEvents : MonoBehaviour
 
     public void EndGame()
     {
-        PlayerPrefs.SetInt("LastScore", gameManager.GetComponent<GameManager>().gameScore);
+        PlayerPrefs.SetInt("LastScore", Mathf.RoundToInt(gameManager.GetComponent<GameManager>().gameScore));
         PlayerPrefs.SetInt("LastMin", gameManager.GetComponent<GameManager>().FinalMin());
         PlayerPrefs.SetInt("LastSec", gameManager.GetComponent<GameManager>().FinalSec());
         PlayerPrefs.SetFloat("LastMs", gameManager.GetComponent<GameManager>().FinalMs());
