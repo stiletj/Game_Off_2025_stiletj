@@ -8,9 +8,11 @@ public class CarSpawner : MonoBehaviour
     public float minTime = 5;
     public float maxTime = 10;
     public float carSpeed;
+    public float bikeSpeed;
     public List<GameObject> carPrefabs;
 
     public List<Transform> spawnPoints;
+    public Transform bikeSpawnPoint;
 
     private float timer;
     private bool isPaused;
@@ -55,7 +57,14 @@ public class CarSpawner : MonoBehaviour
         if (carPrefabs[carNum] != null)
         {
             cars.Add(Instantiate(carPrefabs[carNum]));
-            cars[cars.Count - 1].transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+            if (carNum == carPrefabs.Count - 1)
+            {
+                cars[cars.Count - 1].transform.position = bikeSpawnPoint.position;
+            }
+            else
+            {
+                cars[cars.Count - 1].transform.position = spawnPoints[Random.Range(0, spawnPoints.Count)].position;
+            }
         }
     }
 
@@ -89,8 +98,14 @@ public class CarSpawner : MonoBehaviour
 
             if (!paused)
             {
-                //cars[i].GetComponent<Rigidbody>().linearVelocity = new Vector3(0, 0, -carSpeed * Time.deltaTime);
-                cars[i].transform.position += new Vector3(0, 0, -carSpeed * Time.deltaTime);
+                if (cars[i] == carPrefabs[carPrefabs.Count - 1])
+                {
+                    cars[i].transform.position += new Vector3(0, 0, -bikeSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    cars[i].transform.position += new Vector3(0, 0, -carSpeed * Time.deltaTime);
+                }
             }
         }
     }

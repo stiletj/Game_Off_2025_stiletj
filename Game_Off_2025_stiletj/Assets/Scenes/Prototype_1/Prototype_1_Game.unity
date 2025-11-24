@@ -898,6 +898,7 @@ Transform:
   m_Children:
   - {fileID: 22207374}
   - {fileID: 1541801246}
+  - {fileID: 1021196932}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &950479095
@@ -936,6 +937,7 @@ MonoBehaviour:
   minTime: 1
   maxTime: 2.5
   carSpeed: 7
+  bikeSpeed: 18
   carPrefabs:
   - {fileID: 3056769635740716733, guid: 05fb98a4de82791489b194e5bba1fcd3, type: 3}
   - {fileID: 2794976015801796552, guid: 220a6d508acdd804bb2aed1bcc5e3a81, type: 3}
@@ -949,9 +951,11 @@ MonoBehaviour:
   - {fileID: 4961302933917328441, guid: 15a7396136099df4ca4b10c283628687, type: 3}
   - {fileID: 637606797417205612, guid: 824fe9ee9651c0140be445e0a249f887, type: 3}
   - {fileID: 168861655921274526, guid: f37171c54db5fd74690c609c015a77ea, type: 3}
+  - {fileID: 4298250514511393216, guid: 98f0ccb53c1672e4db493adaa73fb85d, type: 3}
   spawnPoints:
   - {fileID: 22207374}
   - {fileID: 1541801246}
+  bikeSpawnPoint: {fileID: 1021196932}
 --- !u!114 &950479097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -980,6 +984,37 @@ MonoBehaviour:
   - {x: -10, y: 1, z: -11}
   maxDespawnRanges:
   - {x: 10, y: 1, z: -10}
+--- !u!1 &1021196931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1021196932}
+  m_Layer: 0
+  m_Name: BikeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1021196932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021196931}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 70}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 950479094}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1078012434 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5372977467866332142, guid: 115f88afcd30f5f4aa8ea776073667c3, type: 3}
