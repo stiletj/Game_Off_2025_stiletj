@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ public class NPCInteraction : MonoBehaviour
 {
     public GameObject puzzlePrefab;
     public GameObject canvas;
+    public GameObject speechBubble;
+
     private GameObject puzzle;
     private GameObject player = null;
     private int difficulty;
@@ -17,6 +20,7 @@ public class NPCInteraction : MonoBehaviour
     {
         difficulty = 0;
         used = false;
+        speechBubble.SetActive(false);
     }
 
     // Update is called once per frame
@@ -24,8 +28,17 @@ public class NPCInteraction : MonoBehaviour
     {
         if (player != null)
         {
+            if (puzzle.GetComponent<ArrowPuzzle>().isIncorrect)
+            {
+                speechBubble.SetActive(true);
+                speechBubble.GetComponentInChildren<TextMeshProUGUI>().text = "Who the hell are you?";
+            }
+
             if (puzzle.GetComponent<ArrowPuzzle>().isComplete)
             {
+                speechBubble.SetActive(true);
+                speechBubble.GetComponentInChildren<TextMeshProUGUI>().text = "Hey man, what's up?";
+
                 puzzle.GetComponent<ArrowPuzzle>().DeletePuzzle();
                 Destroy(puzzle);
                 puzzle = null;

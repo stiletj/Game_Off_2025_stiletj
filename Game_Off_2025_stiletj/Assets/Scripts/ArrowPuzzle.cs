@@ -17,6 +17,7 @@ public class ArrowPuzzle : MonoBehaviour
     public GameObject canvas;
     public List<GameObject> arrowImages;
     public bool isComplete;
+    public bool isIncorrect;
     public Material correctMaterial;
     public Material incorrectMaterial;
     public float waitTime = 1f;
@@ -38,6 +39,7 @@ public class ArrowPuzzle : MonoBehaviour
         currentIndex = 0;
         correctKey = -1;
         isComplete = false;
+        isIncorrect = false;
         isDrawn = false;
         timer = waitTime;
         wait = false;
@@ -109,6 +111,7 @@ public class ArrowPuzzle : MonoBehaviour
                 {
                     currentIndex = 0;
                     isComplete = true;
+                    isIncorrect = false;
                 }
                 else
                 {
@@ -124,6 +127,8 @@ public class ArrowPuzzle : MonoBehaviour
                 {
                     arrowObjects[i].GetComponent<Image>().material = incorrectMaterial;
                 }
+
+                isIncorrect = true;
 
                 wait = true;
                 timer = waitTime;
